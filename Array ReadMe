@@ -1,0 +1,6 @@
+#Array ReadMe
+
+We have implemented basic insertion, deletion and display array for array module in python
+
+We have also done Binary search(works only if initial array is in sorted form),
+though search by value is already implemented by index() method but we still do it to get taste of things
