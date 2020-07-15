@@ -32,6 +32,7 @@ def MergeSort(arr):
     right_list = MergeSort(arr[mid:])
     return merge(left_list, right_list)
 
+#Helper
 def merge(left, right):
     m=len(left)
     n=len(right)
@@ -58,6 +59,7 @@ def QuickSort(arr, low, high):
         QuickSort(arr,low,p-1)
         QuickSort(arr,p+1,high)
 
+#Helper
 def partition(arr, low, high):
     i = ( low-1 )          
     pivot = arr[high]     
@@ -71,7 +73,7 @@ def partition(arr, low, high):
     return ( i+1 )
 
     
-
+#Driver Code
 arr = list(map(int, input().split()))
 QuickSort(arr,0,len(arr)-1)
 print(arr)
