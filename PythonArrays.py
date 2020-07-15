@@ -15,6 +15,7 @@ def BinarySearch(a, val):
     else:
         return BinarySearch(a[mid+1:],val)+mid+1
 
+#Driver code
 r=list(map(int, input("Initialize the array with some elements: ").split()))
 arr = array("i", r)
 print("\n")
@@ -27,6 +28,7 @@ print("INDEX:"+\
         "\n\"e\" -> Exit")
 print("\n")
 
+#The menu
 while(True):
     x = input("Enter Your choice: ")
     if(x=="e"):
