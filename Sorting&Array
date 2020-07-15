@@ -4,3 +4,6 @@ We have implemented basic insertion, deletion and display array for array module
 
 We have also done Binary search(works only if initial array is in sorted form),
 though search by value is already implemented by index() method but we still do it to get taste of things
+
+In sorting.py we have implemented bubble sort, insertion sort, selection sort, merge sort and quick sort. 
+Only merge sort returns a seperate array after sorting, the rest change the array itself.
