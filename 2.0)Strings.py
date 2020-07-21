@@ -1,5 +1,7 @@
 from math import factorial
 
+#Finds Lexicographic rank.
+#Works for strings with only upper or smaller case non repeating letters.
 def LexicographicRank(s):
     n = len(s)
     rank=1
