@@ -38,6 +38,23 @@ def isValid(s):
     else:
         return "NO"
 
+#Function that returns min number of deletions to make two strings anagrams.
+#The function has not been called in driver code
+def makeAnagram(a, b):
+    a=Counter(a)
+    b=Counter(b)
+    Deletions=0
+    for k in a.keys():
+        if(k not in b.keys()):
+            Deletions+=a[k]
+        else:
+            Deletions+=abs(a[k]-b[k])
+            del b[k]
+    for k in b.keys():
+        Deletions+=b[k]
+    return Deletions
+
+#Driver Code
 string = input()
 print(LexicographicRank(string))
 print(isValid(s))
