@@ -38,6 +38,33 @@ def isValid(s):
     else:
         return "NO"
 
+#This function counts number of special sub strings in a string
+#Special substrings are either strings with same character like "a", "aaaa", "bbbb" etc or only the middle element is different in case of odd length strings.
+#Ex- For aabaab the list of special Substrings will be {"a", "a", "b", "a", "a", "b", "aa", "aa", "aabaa", "aba"}
+def specialSubstrCount(n, s):
+    TotalCount=0
+    #Array that will for each char contain how many characters repeat consecutevely for it.
+    sameChar=[0]*n
+    i=0
+    #For the even length strings
+    while(i<n):
+        sameCharCount=1
+        j=i+1
+        while(j<n and s[j]==s[i]):
+            j+=1
+            sameCharCount+=1
+        TotalCount+=int((sameCharCount*(sameCharCount+1))/2)
+        sameChar[i]=sameCharCount
+        i=j
+    #For odd length strings
+    for k in range(1,n):
+        if(s[k]==s[k-1]):
+            sameChar[k]=sameChar[k-1]
+        if(k<n-1):
+            if(s[k-1]==s[k+1] and s[k]!=s[k-1]):
+                TotalCount+= min(sameChar[k-1],sameChar[k+1])
+    return TotalCount    
+    
 #Function that returns min number of deletions to make two strings anagrams.
 #The function has not been called in driver code
 def makeAnagram(a, b):
@@ -57,4 +84,5 @@ def makeAnagram(a, b):
 #Driver Code
 string = input()
 print(LexicographicRank(string))
-print(isValid(s))
+print(isValid(string))
+print(specialSubstrCount(string))
