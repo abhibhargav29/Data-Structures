@@ -81,6 +81,24 @@ def makeAnagram(a, b):
         Deletions+=b[k]
     return Deletions
 
+#This function finds the longest common subsequence in two strings
+#A subsequence is NOT EXACTLY like a substring as it may or may not be continuous.
+#Any string is a child(subsequence) of a parent string if it can be formed from the parent string by 0 or more character deletions.
+#Example- "ACD" is the longest subsequence of "ABCD" and "AGCTD".
+def commonChild(s1, s2):
+    m=len(s1)
+    n=len(s2)
+    Matrix=[[0]*(n+1) for i in range(m+1)]
+    for i in range(m+1):
+        for j in range(n+1):
+            if(i==0 or j==0):
+                Matrix[i][j]=0
+            elif(s1[i-1]==s2[j-1]):
+                Matrix[i][j] = 1+Matrix[i-1][j-1]
+            else:
+                Matrix[i][j] = max(Matrix[i-1][j], Matrix[i][j-1])
+    return Matrix[m][n]
+
 #Driver Code
 string = input()
 print(LexicographicRank(string))
