@@ -5,3 +5,4 @@ Anagrams making.
 Checking for Lexicographic rank.
 Checking if all letters occus same number of times.
 Checking for speacial substrings(special palindrome for odd length and same character string for even).
+Finding Length of longest subsequence.
