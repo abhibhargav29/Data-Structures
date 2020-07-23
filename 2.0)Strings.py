@@ -101,6 +101,31 @@ def commonChild(s1, s2):
                 Matrix[i][j] = max(Matrix[i-1][j], Matrix[i][j-1])
     return Matrix[m][n]
 
+#Rabin Karp algo to find pattern in a string
+#The function has not been called in the driver code
+def RabinKarp(string, pat):
+    res=[]
+    
+    patHashVal  = 0
+    currHashVal = 0 
+    for i in range(len(pat)):
+        patHashVal+=ord(pat[i])
+        currHashVal+= ord(string[i])
+    
+    for j in range(0,len(string)-len(pat)+1):
+        if(patHashVal==currHashVal):
+            flag=0
+            for k in range(len(pat)):
+                if(pat[k]!=string[j+k]):
+                    flag=1
+                    break
+            if(flag==0):
+                res.append(j)
+        currHashVal-= ord(string[j])
+        if(j+len(pat)<len(string)):
+            currHashVal+= ord(string[j+len(pat)])
+    return " ".join(map(str, res))
+
 #Driver Code
 string = input()
 print(LexicographicRank(string))
