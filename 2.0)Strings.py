@@ -85,9 +85,11 @@ def makeAnagram(a, b):
 #A subsequence is NOT EXACTLY like a substring as it may or may not be continuous.
 #Any string is a child(subsequence) of a parent string if it can be formed from the parent string by 0 or more character deletions.
 #Example- "ACD" is the longest subsequence of "ABCD" and "AGCTD".
+#The function has not been called in driver code
 def commonChild(s1, s2):
     m=len(s1)
     n=len(s2)
+    #We use this matrix as tabulation for this DP approach.
     Matrix=[[0]*(n+1) for i in range(m+1)]
     for i in range(m+1):
         for j in range(n+1):
