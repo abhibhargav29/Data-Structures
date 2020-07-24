@@ -79,7 +79,10 @@ def makeAnagram(a, b):
             del b[k]
     for k in b.keys():
         Deletions+=b[k]
-    return Deletions
+    if(Deletions==len(a)+len(b)):
+        return -1
+    else:
+        return Deletions
 
 #This function finds the longest common subsequence in two strings
 #A subsequence is NOT EXACTLY like a substring as it may or may not be continuous.
