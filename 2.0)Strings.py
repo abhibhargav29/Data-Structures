@@ -129,6 +129,48 @@ def RabinKarp(string, pat):
             currHashVal+= ord(string[j+len(pat)])
     return " ".join(map(str, res))
 
+#helper for KMP Algo to make LPS array
+def computeLPS(string, m):
+    LPSarr=[0]*m
+    L=0
+    i=1
+    while(i<m):
+        if(string[i]==string[L]):
+            L+=1
+            LPSarr[i]=L
+            i+=1
+        else:
+            if(L!=0):
+                L=LPSarr[L-1]
+            else:
+                LPSarr[i]=0
+                i+=1
+    return LPSarr
+
+#KMP algo to find a pat in a string.
+#The function has not been called in the driver code.
+def KMP(string, pat):
+    n=len(string)
+    m=len(pat)
+    lps = computeLPS(pat, m)
+    
+    i=0
+    j=0
+    Found=[]
+    while(i<n):
+        while(j<m and i<n and string[i]==pat[j]):
+            i+=1
+            j+=1
+        if(j==len(pat)):
+            Found.append(i-len(pat))
+            j=lps[j-1]
+        elif(i<n and string[i] != pat[j]):
+            if(j!=0):
+                j=lps[j-1]
+            else:
+                i+=1
+    return " ".join(map(str, Found))
+
 #Driver Code
 string = input()
 print(LexicographicRank(string))
