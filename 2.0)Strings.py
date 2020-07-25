@@ -159,6 +159,7 @@ def KMP(string, pat):
     i=0
     j=0
     Found=[]
+    #Use lps array to find the next j to match from.
     while(i<n):
         while(j<m and i<n and string[i]==pat[j]):
             i+=1
