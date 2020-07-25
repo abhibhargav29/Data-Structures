@@ -141,6 +141,7 @@ def computeLPS(string, m):
             i+=1
         else:
             if(L!=0):
+                #Change L but not i
                 L=LPSarr[L-1]
             else:
                 LPSarr[i]=0
@@ -152,6 +153,7 @@ def computeLPS(string, m):
 def KMP(string, pat):
     n=len(string)
     m=len(pat)
+    #Get the lps array
     lps = computeLPS(pat, m)
     
     i=0
