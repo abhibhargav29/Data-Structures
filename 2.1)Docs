@@ -7,5 +7,5 @@ The string.py file contain some string manipulations--
 --Anagrams making.
 --Finding Length of longest common subsequence.
 --Rabin Karp Algo with rolling Hash.
---LPS array computing
---KMP algorithm
+--LPS array computing.
+--KMP algorithm.
