@@ -1,5 +1,6 @@
 from array import *
 
+#Binary Search
 def BinarySearch(a, val):
     n=len(a)
     if(n==1):
@@ -14,6 +15,21 @@ def BinarySearch(a, val):
         return BinarySearch(a[:mid],val)
     else:
         return BinarySearch(a[mid+1:],val)+mid+1
+
+#Array Manipulation
+def arrayManipulation(n, queries):
+    arr=[0]*(n)
+    for q in queries:
+        arr[q[0]-1]+=q[2]
+        if(q[1]<n):
+            arr[q[1]]-=q[2]
+    maxElement=0
+    x=0
+    for i in range(len(arr)):
+        x=x+arr[i]
+        if(x>maxElement):
+            maxElement=x
+    return maxElement
 
 #Driver code
 r=list(map(int, input("Initialize the array with some elements: ").split()))
