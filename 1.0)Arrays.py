@@ -17,6 +17,11 @@ def BinarySearch(a, val):
         return BinarySearch(a[mid+1:],val)+mid+1
 
 #Array Manipulation
+#The function taes in an integer n and creates 0 array of size n, the perform the queries one by one.
+#The queries is a list of 3-tuples, the first two tell us indexes(from 1) and third number is the number to add.
+#Ex- for a querry  1 5 6, we will add 6 to every number from 1 to 5 index(both inclusive).
+#The function returns max element in array after performing all the querries.
+#The function is not called in driver code.
 def arrayManipulation(n, queries):
     arr=[0]*(n)
     for q in queries:
