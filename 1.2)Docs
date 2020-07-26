@@ -3,7 +3,10 @@
 We have implemented basic insertion, deletion and display array for array module in python
 
 We have also done Binary search(works only if initial array is in sorted form),
-though search by value is already implemented by index() method but we still do it to get taste of things
+though search by value is already implemented by index() method but we still do it to get taste of things.
+
+We have made a function that takes in an array of size n (all zeros) and a list of 3 length tuples, performing array manipulation
+according to the tuples and returning max element. It has not been called in the driver code.
 
 In sorting.py we have implemented bubble sort, insertion sort, selection sort, merge sort and quick sort. 
 Only merge sort returns a seperate array after sorting, the rest change the array itself.
