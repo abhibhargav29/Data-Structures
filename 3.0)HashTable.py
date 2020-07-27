@@ -1,10 +1,12 @@
 class ChainedHashTable():
     def __init__(self, m):
+        #Creating a list for being used as chain inside the Table.
         self.Table= list([[] for i in range(m)])
         self.m = m
 
     def insert(self, num):
         key = num%(self.m)
+        #Limiting chain length to 5
         if(len(self.Table[key])<=5):
             self.Table[key].append(num)
         else:
