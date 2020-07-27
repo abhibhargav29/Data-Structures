@@ -1,0 +1,5 @@
+We have implemented hash table in python using chaining for collision handling.
+
+The class created has to be initialized with the number to be used as modulo to covert into indices.
+We have limited to max 5 elements to be stored on same index chain.
+A better lookup table is implemented in python(dictionaries) but we did this for concepts.
