@@ -9,3 +9,5 @@ The string.py file contain some string manipulations--
 --Rabin Karp Algo with rolling Hash.
 --LPS array computing.
 --KMP algorithm.
+--Steady Gene(Taking a string of length 4n made up of only "A", "C", "T" and "G" and returning the length of smallest substring that has to 
+  be replaced to make the occurence of each letter = n)
