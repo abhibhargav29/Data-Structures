@@ -179,6 +179,7 @@ def KMP(string, pat):
 #It is assumed that the length of gene passed is a multiple of 4.
 #The function is not called in driver code
 def steadyGene(gene):
+    #Dictionary to store count
     dic = {'A':0,'T':0,'C':0,'G':0}
     for i in gene:
         dic[i]+=1
@@ -187,7 +188,8 @@ def steadyGene(gene):
 
     if dic['A']==factor and dic['T']==factor and dic['C']==factor and dic['G']==factor:
         return 0
-    
+    #upper will traverse to take care of every letter occuring more number of times.
+    #lower will traverse for letters that are less number of times.
     upper=0
     lower=0
     minlen=x
