@@ -1,8 +1,10 @@
+#Making a node class
 class Node():
     def __init__(self, val = None):
         self.value= val 
         self.next = None
 
+#Defining class singly linklist
 class SinglyLinkedList():
     def __init__(self):
         self.head = None
@@ -52,6 +54,7 @@ class SinglyLinkedList():
             print(traverse.value, end=" ")
             traverse = traverse.next
 
+#Driver Code checking each function
 LL = SinglyLinkedList()
 LL.array_to_Linklist([1,2,3,5,7], 5)
 LL.insert(0,0)
