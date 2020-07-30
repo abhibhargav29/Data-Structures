@@ -1,0 +1,6 @@
+#Link List
+
+This is an implementation of singly link list in python.
+
+The class created supports insertion, deletion, display and coversion of whole array to link list. Both insertion
+and deletion are done by indexing from 0.  
