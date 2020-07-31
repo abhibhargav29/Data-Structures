@@ -28,17 +28,20 @@ class SinglyLinkedList():
         while(curr!=None):
             if(curr.value == val):
                 prev.next = curr.next
+                #If we want to delete each and every occurence we will remove this break statement.
                 break
             prev = curr
             curr = curr.next
 
     def insert(self, val, index=0):
         New = Node(val)
+        #Insert at beginning
         if(index == 0):
             temp = self.head
             self.head= New
             New.next = temp
             return
+        #Negative index means insert at this index counting from last, so we use two ptr approach.
         elif(index<0):
             index=-index
             prev = self.head
@@ -52,6 +55,7 @@ class SinglyLinkedList():
             prev.next = New
             New.next = temp
             return
+        #The positive index case
         prev = self.head
         index-=1
         while(index>0):
