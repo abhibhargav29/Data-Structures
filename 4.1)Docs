@@ -2,5 +2,7 @@
 
 This is an implementation of singly link list in python.
 
-The class created supports insertion, deletion, display and coversion of whole array to link list. Both insertion
-and deletion are done by indexing from 0.  
+The class created supports insertion at a index, deletion, display, reversing and coversion of whole array to link list.  
+If index given in insertion is negatve, the element is inserted from the last, ex: -2 means insert at second last position.
+Delete method only removes first occurence of an element in the linklist.
+Reverse method revreses the linklist itself and does not return a new linklist.
