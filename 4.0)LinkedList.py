@@ -65,6 +65,12 @@ class SinglyLinkedList():
         prev.next = New
         New.next = temp
         
+    def display(self):
+        traverse = self.head
+        while(traverse!=None):
+            print(traverse.value, end=" ")
+            traverse = traverse.next
+            
     def reverse(self):
         prev=self.head
         curr=self.head.next
@@ -75,26 +81,93 @@ class SinglyLinkedList():
             prev=curr
             curr=next
         self.head = prev
-
-    def display(self):
-        traverse = self.head
+        
+    def segregate(self):
+        evenH=None
+        oddH=None
+        evenT=None
+        oddT=None
+        traverse=self.head
         while(traverse!=None):
-            print(traverse.value, end=" ")
-            traverse = traverse.next
+            if(traverse.value%2==0):
+                if(evenH==None):
+                    evenH=traverse
+                    evenT=traverse
+                else:
+                    evenT.next=traverse
+                    evenT=traverse
+            else:
+                if(oddH==None):
+                    oddH=traverse
+                    oddT=traverse
+                else:
+                    oddT.next=traverse
+                    oddT=traverse
+            traverse=traverse.next
+
+        if(oddH==None or evenH==None):
+            return
+        evenT.next=oddH
+        oddT.next=None
+        self.head=evenH
+
+    def make_loop(self, n):
+        traverse=self.head
+        end=self.head
+        cnt=0
+        while(traverse!=None and cnt<n):
+            traverse=traverse.next
+            end=end.next
+            cnt+=1
+        while(end.next!=None):
+            end=end.next
+        end.next=traverse
+        print("Loop made by linking",end.value,"to",traverse.value)
+        
+    def remove_loop(self):
+        slow=self.head
+        fast=self.head
+        flag=0
+        while(fast!=None or fast.next!=None):
+            slow=slow.next
+            fast=(fast.next).next
+            if(slow==fast):
+                flag=1
+                break
+        if(flag==0):
+            print("No loop present")
+            return
+        slow=self.head
+        while(slow.next!=fast.next):
+            slow=slow.next
+            fast=fast.next
+        fast.next=None
 
 #Driver Code checking each function
 LL = SinglyLinkedList()
 LL.array_to_Linklist([1,2,3,5,7], 5)
 print("Array converted to linklist: ",end="")
 LL.display()
+
 LL.insert(0,0)
 LL.insert(8,-1)
 print("After inertions at start and end: ",end="")
 LL.display()
+
 LL.delete(7)
 print("After deletion of 7: ", end="")
 LL.display()
+
 LL.reverse()
 print("After reversing: ",end="")
+LL.display()
+
+LL.segregate()
+print("After seperating: ",end="")
+LL.display()
+
+LL.make_loop(2)
+LL.remove_loop()
+print("Loop removed: ",end="")
 LL.display()
             
