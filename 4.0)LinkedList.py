@@ -71,6 +71,7 @@ class SinglyLinkedList():
             print(traverse.value, end=" ")
             traverse = traverse.next
             
+    #Method to reverse given list  
     def reverse(self):
         prev=self.head
         curr=self.head.next
