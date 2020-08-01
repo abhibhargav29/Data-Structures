@@ -82,7 +82,9 @@ class SinglyLinkedList():
             prev=curr
             curr=next
         self.head = prev
-        
+    
+    #Method that places even elements at front and odd at back
+    #It maintains order between two even or odd elements
     def segregate(self):
         evenH=None
         oddH=None
@@ -112,6 +114,7 @@ class SinglyLinkedList():
         oddT.next=None
         self.head=evenH
 
+    #This method makes a link from end to the element with given index n
     def make_loop(self, n):
         traverse=self.head
         end=self.head
@@ -125,6 +128,7 @@ class SinglyLinkedList():
         end.next=traverse
         print("Loop made by linking",end.value,"to",traverse.value)
         
+    #This method removes any link if present
     def remove_loop(self):
         slow=self.head
         fast=self.head
@@ -146,27 +150,35 @@ class SinglyLinkedList():
 
 #Driver Code checking each function
 LL = SinglyLinkedList()
+
+#Storing in LL
 LL.array_to_Linklist([1,2,3,5,7], 5)
 print("Array converted to linklist: ",end="")
 LL.display()
 
+#Insertion
 LL.insert(0,0)
 LL.insert(8,-1)
 print("After inertions at start and end: ",end="")
 LL.display()
 
+#Deletion
 LL.delete(7)
 print("After deletion of 7: ", end="")
 LL.display()
 
+#Reversing
 LL.reverse()
 print("After reversing: ",end="")
 LL.display()
 
+#Segregation
 LL.segregate()
 print("After seperating: ",end="")
 LL.display()
 
+#We introduce a loop and then remove it, note that if you call display method after making loop, the you will
+#be stuck in an infinte loop while printing.
 LL.make_loop(2)
 LL.remove_loop()
 print("Loop removed: ",end="")
