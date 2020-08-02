@@ -1,4 +1,5 @@
 from array import *
+from math import gcd
 
 #Binary Search
 def BinarySearch(a, val):
@@ -36,6 +37,8 @@ def arrayManipulation(n, queries):
             maxElement=x
     return maxElement
 
+#This funtion takes in an rray and rotates it by d places using juggling algorithm.
+#The funtion has not been called in the driver code.
 def rotate(arr, n, d):
     d=d%n
     GCD = gcd(n,d)
