@@ -36,6 +36,23 @@ def arrayManipulation(n, queries):
             maxElement=x
     return maxElement
 
+def rotate(arr, n, d):
+    d=d%n
+    GCD = gcd(n,d)
+    for i in range(GCD):
+        temp = arr[i]
+        j=i
+        while(True):
+            k=j+d
+            if(k>=n):
+                k= k-n
+            if(k==i):
+                break
+            arr[j]=arr[k]
+            j=k
+        arr[j]=temp
+    print(" ".join(map(str, arr)))
+
 #Driver code
 r=list(map(int, input("Initialize the array with some elements: ").split()))
 arr = array("i", r)
