@@ -1,3 +1,5 @@
+#HashTable ReadMe
+
 We have implemented hash table in python using chaining for collision handling.
 
 The class created has to be initialized with the number to be used as modulo to covert into indices.
