@@ -5,6 +5,6 @@ This is an implementation of singly link list in python.
 The class created supports insertion at a index, deletion, display, reversing, segregation of even and odd elements, removal of loops and coversion of whole array to linklist.  
 If index given in insertion is negatve, the element is inserted from the last, ex: -2 means insert at second last position.
 Delete method only removes first occurence of an element in the linklist.
-Reverse method revreses the linklist itself and does not return a new linklist.
+Reverse method revreses the linklist itself and does not return a new linklist. It uses 2 pointers iteratively
 Segregate method places even elements up front and odd at the back in same order as in original list.
 Remove_loop removes the loop and we have a make_loop method to introduce a loop from end to any middle index.
