@@ -38,11 +38,13 @@ def arrayManipulation(n, queries):
     return maxElement
 
 #This funtion takes in an rray and rotates it by d places using juggling algorithm.
+#We divide the array into sets of size of the gcd of d and n, and the shift each element in those sets
 #The funtion has not been called in the driver code.
 def rotate(arr, n, d):
     d=d%n
     GCD = gcd(n,d)
     for i in range(GCD):
+        #A variabe to store first element which has to become the last of the set.
         temp = arr[i]
         j=i
         while(True):
