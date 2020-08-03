@@ -178,7 +178,7 @@ print("After seperating: ",end="")
 LL.display()
 
 #We introduce a loop and then remove it, note that if you call display method after making loop, the you will
-#be stuck in an infinte loop while printing.
+#be stuck in an infinte loop while printing and it woulr print first the link list andthen the elements in loop again and again.
 LL.make_loop(2)
 LL.remove_loop()
 print("Loop removed: ",end="")
