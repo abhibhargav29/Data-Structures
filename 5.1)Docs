@@ -1,0 +1,12 @@
+#Stack
+
+We have implemented stack using array and made push, pop and delete options. 
+We have also used that data structure to solve balance paranthesis problem.\
+
+The stack is dynamically sized and thus there is no problem of overflow.
+The pop method takes an optional parameter "ret", which if set to True will return the removed element as well otherwise not.
+We have made a topElement method as it is helpful in our function.
+
+The function takes in a string consisting of only brackets and returns if the string has equal number of opening and closing brackets
+and each bracket opened is closed by the same corresponding bracket and in the same opening order. ex: "[]{([])}" is balanced but 
+"{[(])}" is not.
