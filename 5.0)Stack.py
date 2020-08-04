@@ -1,3 +1,4 @@
+#Our stack
 class Stack():
     def __init__(self, arr=[]):
         self.mainArr= arr
@@ -22,6 +23,7 @@ class Stack():
             return False
         return self.mainArr[-1]
 
+#Function to check if a string has balanced paranthesis
 def isBalParenthesis(string):
     s = Stack()
     opening = ["(","{","["]
@@ -43,5 +45,6 @@ def isBalParenthesis(string):
     else:
         return False
 
+#Driver Code
 string = input()
 print("The given string has balanced paranthesis: ",isBalParenthesis(string))
