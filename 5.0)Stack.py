@@ -46,6 +46,7 @@ def isBalParenthesis(string):
         return False
 
 #Stock span problem
+#We maintain a stack that only stores greater elements and pops all smaller elements.
 #This funtion is not called in the driver code 
 def StockSpanProblem(arr):
     s = Stack()
