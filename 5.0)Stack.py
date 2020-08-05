@@ -50,17 +50,17 @@ def isBalParenthesis(string):
 #This funtion is not called in the driver code 
 def StockSpanProblem(arr):
     s = Stack()
-    SpanArr=[1]
+    spanArr=[1]
     s.push(0)
-    for i in range(1,n):
-        while(s.size!=0 and s.topElement<=arr[i]):
+    for i in range(1,len(arr)):
+        while(s.size!=0 and arr[s.topElement()]>=arr[i]):
             s.pop()
         if(s.size==0):
             spanArr.append(i+1)
         else:
-            spanArr.append(i-s.topElement)
+            spanArr.append(i-s.topElement())
         s.push(i)
-    return SpanArr
+    return spanArr
     
 #Driver Code
 string = input()
