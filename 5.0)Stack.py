@@ -61,6 +61,37 @@ def StockSpanProblem(arr):
             spanArr.append(i-s.topElement())
         s.push(i)
     return spanArr
+
+#The function takes in three stacks and returns the sum that occurs in all these stacks.
+#The problem goes like this: Given three stacks, we are allowed to pop any numer of elements from any stack that, in the end
+#we get the sum of all elements of each stack to be equal, we have to do so in order to maximize this sum.
+def equalStacks(h1, h2, h3):
+    if(h1==[] or h2==[] or h3==[]):
+        return 0
+
+    h1 = list(reversed(h1))
+    h2 = list(reversed(h2))
+    h3 = list(reversed(h3))
+    prefixArr1=set()
+    prefixArr2=set()
+    prefixArr3=set()
+    psum=0
+    for i in range(0,len(h1)):
+        psum+=h1[i]
+        prefixArr1.add(psum)
+    psum=0
+    for i in range(0,len(h2)):
+        psum+=h2[i]
+        prefixArr2.add(psum)
+    psum=0
+    for i in range(0,len(h3)):
+        psum+=h3[i]
+        prefixArr3.add(psum)
+
+    ans =(prefixArr1.intersection(prefixArr2)).intersection(prefixArr3)
+    if(len(ans)==0):
+        return 0
+    return max(ans)
     
 #Driver Code
 string = input()
