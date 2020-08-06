@@ -1,7 +1,8 @@
 #Stack
 
 We have implemented stack using array and made push, pop and delete options. 
-We have also used that data structure to solve balance paranthesis problem and stock span problem
+We have also used that data structure to solve balance paranthesis problem and stock span probelem.
+We have also implemented an equal stacks function. 
 
 The stack is dynamically sized and thus there is no problem of overflow.
 The pop method takes an optional parameter "ret", which if set to True will return the removed element as well otherwise not.
@@ -14,3 +15,7 @@ and each bracket opened is closed by the same corresponding bracket and in the s
 The stock span problem function takes in an array and returns a span array, the span array for each index stores the number of elements
 that are smaller or equal to the number on that index on its contiguous left including the number itself. ex: [15, 12, 13, 14, 5, 19] for this 
 array, span array will be [1,1,1,3,1,6]. This problem has variations like greatest element to the left or right.
+
+The equal stacks function takes in three arrays basically and returns the maximum sum present in the stack made from the arrays. The stack is
+made bu pushing elements of array into it from starting, so the stack will be in reversed form, like this: Arr: [1,2,3,4,5] Stack: [5,4,3,2,1], the
+top will be at 5 and 5 will be poped on pop operation. Given 3 such stacks we hve to return maximum common sum in the stacks.
