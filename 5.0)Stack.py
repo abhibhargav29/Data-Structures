@@ -97,6 +97,32 @@ def equalStacks(h1, h2, h3):
         return 0
     return max(ans)
     
+#Stack Game function(explained tin the docs of stack).
+#The function is not called in driver code.
+def StackGame(a, b, x):
+    i = 0
+    while i < len(a) and x >= a[i]:
+        x -= a[i]
+        i += 1
+    
+    ans = i
+    j = 0
+    for p in b:
+        if(i==0 and x<0):
+            break
+        
+        j += 1
+        x -= p
+        
+        while x < 0 and i > 0:
+            i -= 1
+            x += a[i]
+        
+        if x >= 0:
+            ans = max(ans, j + i)
+
+    return(ans)
+    
 #Driver Code
 string = input()
 print("The given string has balanced paranthesis: ",isBalParenthesis(string))
