@@ -53,7 +53,7 @@ def StockSpanProblem(arr):
     spanArr=[1]
     s.push(0)
     for i in range(1,len(arr)):
-        while(s.size!=0 and arr[s.topElement()]>=arr[i]):
+        while(s.size!=0 and arr[s.topElement()]<=arr[i]):
             s.pop()
         if(s.size==0):
             spanArr.append(i+1)
