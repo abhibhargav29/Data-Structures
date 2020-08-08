@@ -7,6 +7,7 @@ We have implemented a stack game function which is a good dp problem.
 
 1) The stack is dynamically sized and thus there is no problem of overflow.
 The pop method takes an optional parameter "ret", which if set to True will return the removed element as well otherwise not.
+It will return False for underflow whether the element is present or not.
 We have made a topElement method as it is helpful in our function.
 
 2) The function takes in a string consisting of only brackets and returns if the string has equal number of opening and closing brackets
