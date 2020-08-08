@@ -98,6 +98,7 @@ def equalStacks(h1, h2, h3):
     return max(ans)
     
 #Stack Game function(explained tin the docs of stack).
+#This is a Dynamic programming approach where x replaces the general memoization and we don't pop from A or B as well.
 #The function is not called in driver code.
 def StackGame(a, b, x):
     i = 0
