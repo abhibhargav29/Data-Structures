@@ -1,4 +1,6 @@
+#Queue Class
 class Queue():
+    #Size holds number of elements and capacity has the actual capacity
     def __init__(self, capacity=10):
         self.arr=[0]*capacity
         self.cap=capacity
@@ -44,6 +46,7 @@ class Queue():
             traverse=(traverse+1)%self.cap
         print(self.arr[traverse])
 
+#Driver code
 Q = Queue(7)
 Q.addElement(1)
 Q.addElement(2)
@@ -53,8 +56,14 @@ Q.addElement(5)
 Q.addElement(6)
 Q.addElement(7)
 Q.show()
+
+#Trying to add after full
 Q.addElement(8)
+
+#Deletion
 Q.delElement()
 Q.show()
-Q.addElement(4)
+
+#Adding after rear reaches end but array has space still
+Q.addElement(8)
 Q.show()
