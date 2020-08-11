@@ -62,6 +62,23 @@ def StockSpanProblem(arr):
         s.push(i)
     return spanArr
 
+#A variation of stock span problem.
+#It return span between next as well as previous element(where the element is minimum in the span)
+#This function is not called in driver code.
+def spanDict(arr):
+    n=len(arr)
+    stack=[]
+    Ans = defaultdict()
+    for i in range(n):
+        while stack and arr[stack[-1]]>=arr[i]:
+            key=stack.pop()
+            Ans[arr[key]] = i-stack[-1]-1 if stack else i
+        stack.append(i)
+    while stack:
+        key=stack.pop()
+        Ans[arr[key]] = n-stack[-1]-1 if stack else n
+    return Ans
+
 #The function takes in three stacks and returns the sum that occurs in all these stacks.
 #The problem goes like this: Given three stacks(initially as arrays), we are allowed to pop any numer of elements from any stack that, in the end
 #we get the sum of all elements of each stack to be equal, we have to do so in order to maximize this sum.
