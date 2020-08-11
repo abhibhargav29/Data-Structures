@@ -18,6 +18,8 @@ and each bracket opened is closed by the same corresponding bracket and in the s
 3) The stock span problem function takes in an array and returns a span array, the span array for each index stores the number of elements
 that are smaller or equal to the number on that index on its contiguous left including the number itself. ex: [15, 12, 13, 14, 5, 19] for this 
 array, span array will be [1,1,1,3,1,6]. This problem has variations like greatest element to the left or right.
+Further, we have a variation of stock span problem which returns a dictionary with elements as keys and values as their corresponding spans for forward as
+well as backward, this type of array is useful in area of rectangle in histogram type questions.
 
 4) The equal stacks function takes in three arrays basically and returns the maximum sum present in the stack made from the arrays. The stack is
 made bu pushing elements of array into it from starting, so the stack will be in reversed form, like this: Arr: [1,2,3,4,5] Stack: [5,4,3,2,1], the
