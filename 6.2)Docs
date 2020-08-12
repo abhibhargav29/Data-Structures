@@ -1,7 +1,7 @@
-#Queue Implementation
+#QUEUE_IMPLEMENTATION
 
-We have implemented the queue using circular array to make all operations in O(1) time.
+6.0)We have implemented the queue using circular array to make all operations in O(1) time.
 
-We have implemented python collections module deque to solve maximum element in contiguous subarray problem.
+6.1)We have implemented python collections module deque to solve maximum element in contiguous subarray problem.
 The problem is to find the maximum element for each contiguous subarray of size k(where k is given) and return them as array.
 For ex: arr=[1,2,3,2,3,6] and k=3 will have answer array as [3,3,3,6], the four sub arrays will be [1,2,3], [2,3,2], [3,2,3] and [2,3,6].
