@@ -1,0 +1,7 @@
+#TREE IMPLEMENTED
+
+We have implemented a simple binary tree and Inorder, Preorder and Postorder traversals.
+We have entered values manually.
+The tree looks like:    1
+                     2     3
+                    4 5   6 7
