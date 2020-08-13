@@ -1,4 +1,4 @@
-#HashTable ReadMe
+#HASH TABLE IMPEMENTATION
 
 We have implemented hash table in python using chaining for collision handling.
 
