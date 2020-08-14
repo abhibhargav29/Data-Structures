@@ -1,4 +1,4 @@
-#Stack
+#STACK IMPLEMENTATION
 
 We have implemented stack using array and made push, pop and delete options. 
 Although python list is in itself a good implementation of stack but we made seperate class and methods.
