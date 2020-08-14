@@ -4,21 +4,20 @@ class Tree():
         self.val = data
         self.left = None
         self.right= None
-
+    
+    #The Three DFS traversals.
     def Inorder(self):
         if(self.left!=None):
             self.left.Inorder()
         print(self.val, end=" ")
         if(self.right!=None):
             self.right.Inorder()
-
     def Preorder(self):
         print(self.val, end=" ")
         if(self.left!=None):
             self.left.Preorder()
         if(self.right!=None):
             self.right.Preorder()
-
     def Postorder(self):
         if(self.left!=None):
             self.left.Postorder()
@@ -26,6 +25,7 @@ class Tree():
             self.right.Postorder()
         print(self.val, end=" ")
         
+    #BFS(each level printed seperately)
     def Levelorder(self):
         q=[]
         if(self.val==None):
@@ -47,6 +47,7 @@ class Tree():
             if(curr.right!=None):
                 q.append(curr.right)
 
+    #Number of nodes
     def size(self):
         if(self.val==None):
             return 0
@@ -59,6 +60,7 @@ class Tree():
         else:
             return 1
 
+    #Kth level nodes
     def k_Level(self, k):
         if(self.val==None):
             return
