@@ -83,6 +83,8 @@ def ConstructTree(InOrd, PreOrd, InStart, InEnd):
     #ConstructTree.PreIndex = 0
     Node = Tree(PreOrd[ConstructTree.PreIndex])
     ConstructTree.PreIndex+=1
+    #Search for given data in only the start and end window of array.
+    #This search fails if there is duplication of values in numbers, so one can use alphabets.
     InIndex=0
     for i in range(InStart,InEnd+1):
         if(InOrd[i]==Node.val):
