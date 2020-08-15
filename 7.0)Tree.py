@@ -74,6 +74,24 @@ class Tree():
             if(self.right!=None):
                 self.right.k_Level(k-1)
 
+#Function to contruct tree from preorder and inorder.
+#Not called in driver code.
+def ConstructTree(InOrd, PreOrd, InStart, InEnd):
+    if(InStart>InEnd):
+        return None
+    #Give PreIndex as static variable at time of calling function like this:
+    #ConstructTree.PreIndex = 0
+    Node = Tree(PreOrd[ConstructTree.PreIndex])
+    ConstructTree.PreIndex+=1
+    InIndex=0
+    for i in range(InStart,InEnd+1):
+        if(InOrd[i]==Node.val):
+            InIndex=i
+            break
+    Node.left = ConstructTree(InOrd, PreOrd, InStart, InIndex-1)
+    Node.right= ConstructTree(InOrd, PreOrd, InIndex+1, InEnd)
+    return Node                
+
 #Driver Code
 #Tree Making
 T = Tree()
