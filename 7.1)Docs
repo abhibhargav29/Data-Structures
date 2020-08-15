@@ -5,3 +5,4 @@ We have entered values manually.
 The tree looks like:    1
                      2     3
                     4 5   6 7
+We have also implemented a function to make a tree given preorder and inorder traversals of a tree.
