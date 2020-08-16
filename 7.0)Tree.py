@@ -1,5 +1,7 @@
 #Tree Class
 class Tree():
+    #Class variable so that its available to all recursive calls in height method.
+    Diameter=0
     def __init__(self, data=None):
         self.val = data
         self.left = None
@@ -46,7 +48,32 @@ class Tree():
                 q.append(curr.left)
             if(curr.right!=None):
                 q.append(curr.right)
-
+    
+    #Spiral Traversal using 2 stacks.
+    def Spiral(self):
+        stk1=[]
+        stk2=[]
+        if(self.val==None):
+            return 
+        stk1.append(self)
+        while(stk1 or stk2):
+            while(stk1):
+                curr=stk1.pop()
+                if(curr.left!=None):
+                    stk2.append(curr.left)
+                if(curr.right!=None):
+                    stk2.append(curr.right)
+                print(curr.val, end=" ")
+            print("|", end=" ")
+            while(stk2):
+                curr=stk2.pop()
+                if(curr.right!=None):
+                    stk1.append(curr.right)
+                if(curr.left!=None):
+                    stk1.append(curr.left)
+                print(curr.val, end=" ")
+            print("|", end=" ")
+    
     #Number of nodes
     def size(self):
         if(self.val==None):
@@ -73,7 +100,25 @@ class Tree():
                 self.left.k_Level(k-1)
             if(self.right!=None):
                 self.right.k_Level(k-1)
-
+    
+    #Height method returns height and if True parameter passed, diameter as well.
+    def height(self, diameter=False):
+        if(self.val==None):
+            return 0
+        if(self.left!=None):
+            lefth = self.left.height()
+        else:
+            lefth=0
+        if(self.right!=None):
+            righth= self.right.height()
+        else:
+            righth=0
+        Diameter = max(diameter, lefth+righth+1)
+        if(diameter):
+            return max(lefth,righth)+1, Diameter
+        return max(lefth,righth)+1
+    
+    
 #Function to contruct tree from preorder and inorder.
 #Not called in driver code.
 def ConstructTree(InOrd, PreOrd, InStart, InEnd):
@@ -108,6 +153,10 @@ T.right.right= Tree(7)
 #Tree size
 print("Tree size: ",T.size())
 
+#Tree Height and Diameter
+h,d = T.height(True)
+print("Height:",h,"Diameter:",d)
+
 #Nodes at kth level
 print("Nodes at 2nd Level: ",end="")
 T.k_Level(2)
@@ -127,3 +176,7 @@ print()
 #BFS Traversal with each level seperated by "|"
 print("LevelOrder Traversal: ", end="")
 T.Levelorder()
+
+#Spiral Trvaersal
+print("Spiral Traversal: ",end="")
+T.Spiral()
