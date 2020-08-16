@@ -1,6 +1,7 @@
 #TREE IMPLEMENTED
 
 We have implemented a simple binary tree and Inorder, Preorder, Postorder, Level order traversals and size and kth level methods.
+We alsp have spiral trversal ethod and a height method that gives diameter as well.
 We have entered values manually.
 The tree looks like:    1
                      2     3
