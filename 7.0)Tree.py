@@ -101,6 +101,25 @@ class Tree():
             if(self.right!=None):
                 self.right.k_Level(k-1)
     
+    #Not Called in driver code
+    def CompleteTreeSize(self):
+        if(self.val==None):
+            return 0
+        leftTraverse=self.left
+        leftH=0
+        while(leftTraverse!=None):
+            leftTraverse=leftTraverse.left
+            leftH+=1
+        rightTraverse=self.right
+        rightH=0
+        while(rightTraverse!=None):
+            rightTraverse=rightTraverse.left
+            rightH+=1
+        if(leftH==rightH):
+            return 2**leftH-1
+        else:
+            return 1 + self.left.CompleteTreeSize() + self.right.CompleteTreeSize()
+    
     #Height method returns height and if True parameter passed, diameter as well.
     def height(self, diameter=False):
         if(self.val==None):
