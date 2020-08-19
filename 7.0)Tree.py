@@ -137,6 +137,25 @@ class Tree():
             return max(lefth,righth)+1, Diameter
         return max(lefth,righth)+1
     
+    #To get a hash map with only top nodes as values and key as their horizontal distance from root.
+    def getVerticalMap(root, m, level=0, priority=0):
+    if(root==None):
+        return
+    if(level not in m):
+        m[level]=[root.info, priority]
+    elif(m[level][1]>priority):
+        m[level]=[root.info, priority]
+
+    getVerticalMap(root.left, m, level-1, priority+1)
+    getVerticalMap(root.right,m, level+1, priority+1)
+
+    #Print top view using hash map.
+    def topView(root):
+        Map={}
+        getVerticalMap(root, Map)
+        for i in sorted(Map.keys()):
+            print(Map[i][0], end=" ")
+    
     
 #Function to contruct tree from preorder and inorder.
 #Not called in driver code.
@@ -156,7 +175,7 @@ def ConstructTree(InOrd, PreOrd, InStart, InEnd):
             break
     Node.left = ConstructTree(InOrd, PreOrd, InStart, InIndex-1)
     Node.right= ConstructTree(InOrd, PreOrd, InIndex+1, InEnd)
-    return Node                
+    return Node  
 
 #Driver Code
 #Tree Making
