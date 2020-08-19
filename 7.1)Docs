@@ -1,11 +1,13 @@
 #TREE IMPLEMENTED
 
-We have implemented a simple binary tree and Inorder, Preorder, Postorder, Level order traversals and size and kth level methods.
-We also have spiral trversal ethod and a height method that gives diameter as well.
+We have implemented a simple binary tree and Inorder, Preorder, Postorder, Level order traversals, Top view, size and kth level methods.
+We also have spiral traversal method and a height method that gives diameter as well.
 Size of a tree is number of nodes. We have a special method for complete tree size with optimization.
 Spiral Traversal is simply level order traversal with each alternate level printed in reverse.
 Diameter of a tree is the maximum number of nodes on a path from one leaf to other.
 Height of a tree is the number of levels it has.
+Top view is printing nodes from left to right that are visible from the top, assuming each node hides all nodes on same vertical
+level as it, same vertical level is determined by the horizotal distance from root.
 We have entered values manually.
 The tree looks like:    1
                      2     3
