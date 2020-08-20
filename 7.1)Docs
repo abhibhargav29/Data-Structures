@@ -6,8 +6,8 @@ Size of a tree is number of nodes. We have a special method for complete tree si
 Spiral Traversal is simply level order traversal with each alternate level printed in reverse.
 Diameter of a tree is the maximum number of nodes on a path from one leaf to other.
 Height of a tree is the number of levels it has.
-Top view is printing nodes from left to right that are visible from the top, assuming each node hides all nodes on same vertical
-level as it, same vertical level is determined by the horizotal distance from root.
+Top view is printing nodes from left to right that are visible from the top, assuming each node hides all nodes below it and on 
+same vertical level as it, same vertical level is determined by the horizotal distance from root.
 We have entered values manually.
 The tree looks like:    1
                      2     3
