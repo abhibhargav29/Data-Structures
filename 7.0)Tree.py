@@ -67,6 +67,7 @@ class Tree():
             print("|", end=" ")
             while(stk2):
                 curr=stk2.pop()
+                #Append in reverse manner in this stack.
                 if(curr.right!=None):
                     stk1.append(curr.right)
                 if(curr.left!=None):
