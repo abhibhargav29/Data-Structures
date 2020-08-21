@@ -37,7 +37,8 @@ class BST():
             else:
                 curr=curr.right
         print(value,"Not Found")
-
+    
+    #Helper for delete method to find inorder successor.
     def minValueNode(self):
         curr=self
         while(curr.left!=None):
@@ -117,7 +118,9 @@ class BST():
             if(curr.right!=None):
                 q.append(curr.right)
 
+#Driver code
 Tree = BST()
+#Insertions
 Tree.insert(30)
 Tree.insert(20)
 Tree.insert(40)
@@ -127,13 +130,17 @@ Tree.insert(25)
 Tree.insert(35)
 Tree.insert(50)
 
+#Search values
 Tree.search(20)
 Tree.search(15)
 
+#Traversal
 Tree.Levelorder()
 print()
 
+#Deletion
 Tree.delete(20)
 
+#Traversal after deletion
 Tree.Levelorder()
 print()
