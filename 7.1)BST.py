@@ -4,6 +4,7 @@ class BST():
         self.left= None
         self.right=None
 
+    #Insert method
     def insert(self, value):
         if(self.val == None):
             self.val = value
@@ -23,6 +24,7 @@ class BST():
         else:
             parent.right= BST(value)
     
+    #Simple search
     def search(self, value):
         if(self.val == None):
             print(value,"Not Found")
@@ -44,7 +46,8 @@ class BST():
         while(curr.left!=None):
             curr=curr.left
         return curr
-
+    
+    #delete method
     def delete(self, value):
         if(self==None):
             return self
@@ -67,6 +70,7 @@ class BST():
             self.right = self.right.delete(temp.val)
         return self
 
+    #Extension of search to find greater closest number.
     def ceil(self, value):
         if(self.val==None):
             return None
@@ -84,6 +88,7 @@ class BST():
             return -1
         return ans    
 
+    #Extension of search to find smaller closest number
     def floor(self, value):
         if(self.val==None):
             return None
@@ -99,6 +104,7 @@ class BST():
                 return -1
         return ans
 
+    #Simple level order traversal like Binary tree.
     def Levelorder(self):
         q=[]
         if(self.val==None):
