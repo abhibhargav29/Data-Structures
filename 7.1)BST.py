@@ -65,6 +65,8 @@ class BST():
                 temp=self.left
                 self=None
                 return temp
+            #If above conditions don't meet, node has both child, so replace node with closest
+            #value in right subtree or left subtree, we use right subtree.
             temp = self.right.minValueNode()  
             self.val = temp.val  
             self.right = self.right.delete(temp.val)
