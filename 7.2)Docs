@@ -15,3 +15,5 @@ We have also implemented a function to make a tree given preorder and inorder tr
 It also has floor and ceil methods that are basically extensions of search method.
 Floor finds the value inside tree that is smaller than given value and closest to it, it gives -1 for not present.
 Ceil finds the value inside tree that is greater than given value and closest to it, it gives -1 for not present.
+The complexity of all these operatns in O(h) except traversal.
+A balancd BST will have all of them as O(logn).
