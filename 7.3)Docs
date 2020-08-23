@@ -17,3 +17,6 @@ Floor finds the value inside tree that is smaller than given value and closest t
 Ceil finds the value inside tree that is greater than given value and closest to it, it gives -1 for not present.
 The complexity of all these operatns in O(h) except traversal.
 A balancd BST will have all of them as O(logn).
+
+7.2)Here we have implemented the balanced Binary search tree AVL. It is one of very strict tree and it has complex insertion and deletions
+to maintain this strict balancing.
