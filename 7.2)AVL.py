@@ -165,10 +165,12 @@ class AVL_Tree(object):
         self.preOrder(root.left) 
         self.preOrder(root.right)
 
+#Drivr Code
 myTree = AVL_Tree() 
 root = None
+
+#Insertion
 nums = [9, 5, 10, 0, 6, 11, -1, 1, 2] 
-  
 for num in nums: 
     root = myTree.insert(root, num) 
   
