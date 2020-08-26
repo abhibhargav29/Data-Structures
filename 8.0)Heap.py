@@ -59,7 +59,6 @@ class minHeap():
     def minHeapify(self, pos):
         left = self.left(pos)
         right= self.right(pos)
-        smallest = pos
 
         if(left==-1):
             return
@@ -71,14 +70,13 @@ class minHeap():
                 return
 
         if(self.heap[left] < self.heap[pos] and self.heap[left] < self.heap[right]):
-            smallest = left
+            self.swap(pos, left)
+            self.minHeapify(left)
         elif(self.heap[right] < self.heap[pos] and self.heap[right] < self.heap[left]):
-            smallest = right
-        
-        if(smallest==pos):
-            return
+            self.swap(pos, right)
+            self.minHeapify(right)
         else:
-            self.swap(smallest, pos)
+            return
 
     #Makes heap from array
     def BuildHeap(self, arr):
