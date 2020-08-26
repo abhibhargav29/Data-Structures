@@ -1,0 +1,4 @@
+#Heap_Implemented
+
+In this py file we have implemented min-heap data structure which is basically a complete tree(where each node is smaller than its desendants)
+stored as an array.
