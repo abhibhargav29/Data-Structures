@@ -84,6 +84,13 @@ class minHeap():
         self.size = len(arr)
         for pos in range((self.size-2)//2,-1,-1):
             self.minHeapify(pos)
+            
+    def HeapPop(self):
+        item = self.heap[0]
+        self.swap(0,self.size-1)
+        self.size-=1
+        self.minHeapify(0)
+        return item
 
 #Driver Code
 Heap1 = minHeap() 
