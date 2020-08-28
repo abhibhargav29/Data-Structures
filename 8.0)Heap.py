@@ -62,8 +62,10 @@ class minHeap():
         left = self.left(pos)
         right= self.right(pos)
 
+        #No child
         if(left==-1):
             return
+        #No right child
         elif(right==-1):
             if(self.heap[left]<self.heap[pos]):
                 self.swap(pos, left)
