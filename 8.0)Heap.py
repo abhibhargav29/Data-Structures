@@ -26,6 +26,7 @@ class minHeap():
     #Insert while maintaining heap property.
     def insert(self, val):
         self.size+=1
+        #Add the value at end of the array
         self.heap.append(val)
         curr = self.size-1
         if(self.parent(curr)==-1):
@@ -38,7 +39,7 @@ class minHeap():
             else:
                 break
 
-    #Display heap as parent child
+    #Display heap as parent and child
     def printHeap(self):
         if(self.size==0):
             print("Empty Heap")
@@ -56,6 +57,7 @@ class minHeap():
             print()
     
     #Helper for build heap
+    #It takes in a position in array and fixes the heap formed from this node as root.
     def minHeapify(self, pos):
         left = self.left(pos)
         right= self.right(pos)
@@ -82,13 +84,17 @@ class minHeap():
     def BuildHeap(self, arr):
         self.heap = arr
         self.size = len(arr)
+        #Call heapify starting from the bottom most non leaf node.
+        #This node is the parent of last node, so it will be at (size-2)//2 position
         for pos in range((self.size-2)//2,-1,-1):
             self.minHeapify(pos)
     
-    #Method not called in driver code.
+    #Method not called in driver code. 
+    #It pops the topmost node or the min element.
     def HeapPop(self):
         item = self.heap[0]
         self.swap(0,self.size-1)
+        del self.heap[size-1]
         self.size-=1
         self.minHeapify(0)
         return item
