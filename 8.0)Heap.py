@@ -94,7 +94,7 @@ class minHeap():
     def HeapPop(self):
         item = self.heap[0]
         self.swap(0,self.size-1)
-        del self.heap[size-1]
+        del self.heap[self.size-1]
         self.size-=1
         self.minHeapify(0)
         return item
