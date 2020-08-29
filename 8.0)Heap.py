@@ -29,6 +29,8 @@ class minHeap():
         #Add the value at end of the array
         self.heap.append(val)
         curr = self.size-1
+        
+        #The case if its the first element that we inserted
         if(self.parent(curr)==-1):
             return
 
