@@ -77,9 +77,11 @@ class minHeap():
 
         if(self.heap[left] < self.heap[pos] and self.heap[left] < self.heap[right]):
             self.swap(pos, left)
+            #Fix the nodes in left part now.
             self.minHeapify(left)
         elif(self.heap[right] < self.heap[pos] and self.heap[right] < self.heap[left]):
             self.swap(pos, right)
+            #Fix the nodes in right part now.
             self.minHeapify(right)
         else:
             return
