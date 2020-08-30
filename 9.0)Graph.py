@@ -16,24 +16,3 @@ class Graph():
         node = AdjNode(src) 
         node.next = self.graph[dest] 
         self.graph[dest] = node 
-  
-    def printGraph(self): 
-        for i in range(self.V): 
-            print("Adjacency list of vertex {}\n head".format(i), end="") 
-            temp = self.graph[i] 
-            while temp: 
-                print(" -> {}".format(temp.vertex), end="") 
-                temp = temp.next
-            print(" \n")
-
-V = 5
-graph = Graph(V) 
-graph.addEdge(0, 1) 
-graph.addEdge(0, 4) 
-graph.addEdge(1, 2) 
-graph.addEdge(1, 3) 
-graph.addEdge(1, 4) 
-graph.addEdge(2, 3) 
-graph.addEdge(3, 4) 
-  
-graph.printGraph() 
