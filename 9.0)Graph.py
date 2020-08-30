@@ -1,8 +1,10 @@
+#Node
 class AdjNode():
     def __init__(self, data):
         self.vertex = data
         self.next = None
 
+#Graph
 class Graph():
     def __init__(self, vertices):
         self.V = vertices
