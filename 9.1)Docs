@@ -1,3 +1,4 @@
 #Graph_Implemented
 
-We have implemented an undirected grapgh.
+We have implemented an undirected graph using adjacency list representation. We have add edge, remove edge, BFS, DFS methods in the 
+class itself. We use list of list for adjacency list. The number of vertices can't be changed and are given in the starting.
