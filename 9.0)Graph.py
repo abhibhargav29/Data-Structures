@@ -94,8 +94,11 @@ class Graph():
             print("vertex",i,"has adjacents: ",end="")
             print(" ".join(map(str, self.graph[i])))
 
+#Driver code
 V = 9
 graph = Graph(V)
+
+#Add edges
 graph.addEdge(0, 1) 
 graph.addEdge(0, 4)
 graph.addEdge(1, 2) 
@@ -108,22 +111,27 @@ graph.addEdge(5, 6)
 graph.addEdge(5, 8)
 graph.addEdge(6, 7) 
    
+#Graph
 print("Graph: ")
 graph.printGraph() 
 print()
 
+#BFS
 print("BFS Traversal from 0: ")
 graph.BFS(0)
 print()
 
+#DFS
 print("DFS Traversal from 0: ")
 graph.DFS(0)
 print()
 
+#Disconnected BFS
 print("BFS Traversal for disconnected: ")
 graph.DisconectedBFS()
 print()
 
+#Disconnected DFS
 print("DFS Traversal for disconnected: ")
 graph.DisconnectedDFS()
 print()
