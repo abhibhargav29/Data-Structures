@@ -3,4 +3,6 @@
 We have implemented an undirected graph using adjacency list representation. We have add edge, remove edge, BFS, DFS methods in the 
 class itself. We use list of list for adjacency list. The number of vertices can't be changed and are given in the starting.
 We have two BFS functions and similarly two DFS functions.
-One is for simple traversal from a givens source and it prints all nodes directly or indirectly reachable from it.
+One is for simple traversal from a given source and it prints all nodes directly or indirectly reachable from it.
+Another one takes in just the grapgh and prints all nodes from even the disconneted components. It also tells the number of components in graph.
+It assumes lowest numbered node as the source for a component and prints DFS/BFS accordingly.
