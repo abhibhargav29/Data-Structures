@@ -1,10 +1,11 @@
 #Heap_Implemented
 
 In this py file we have implemented min-heap data structure which is basically a complete tree(where each node is smaller than its desendants)
-stored as an array. We have implmented insert, heapify, display heap, build heap and delete top methods.
+stored as an array. We have implmented insert, heapify, display heap, build heap, delete top and decrease key methods.
 --Insert first inserts an element at the end and then moves it upwards till it has reached its legit position.
 --Heapify fixes a heap if the position passed to it is the only one that violates the properties.
 --Build head calls heapify from bottom to up so that at each step, all the nodes down are already forming heap.
 --Delete top replaces the top and last elment and then deletes the last element and then calls heapify.
+--Decrease key decreases the value of a given index node and then places it accordingly in heap.
 The output of this program should print two heaps that shoud be identical, as they are made from same data but one from array,
 other from indertions manually.
