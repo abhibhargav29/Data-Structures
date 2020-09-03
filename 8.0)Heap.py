@@ -104,6 +104,17 @@ class minHeap():
         self.size-=1
         self.minHeapify(0)
         return item
+    
+    def DecreaseKey(self, pos, val):
+        self.heap[pos] = val
+        if(self.parent(pos)==-1):
+            return
+        while(self.parent(pos)!=None):
+            if(self.heap[self.parent(pos)]>self.heap[pos]):
+                self.swap(self.parent(pos), pos)
+                pos=self.parent(pos)
+            else:
+                break
 
 #Driver Code
 Heap1 = minHeap() 
