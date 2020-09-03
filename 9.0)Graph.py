@@ -1,4 +1,5 @@
 from queue import Queue
+from heap import minHeap
 
 class Graph():
     def __init__(self, vertices):
@@ -52,7 +53,7 @@ class Graph():
                             visited[ele[0]]=True
                 cnt+=1
         print()
-        print(cnt,"components present")
+        print(cnt,"component(s) present")
 
 
     def DFS(self, source=0):
@@ -77,20 +78,43 @@ class Graph():
                 self.DFSHelper(i, visited)
                 cnt+=1
         print()
-        print(cnt,"components present")
+        print(cnt,"component(s) present")
 
     def printGraph(self): 
         for i in range(self.V):
             if(len(self.graph[i])==0):
-                print("vertex",i,"has no adjacents",end="")
+                print("vertex",i,"has no adjacents")
                 continue
             print("vertex",i,"has adjacents: ",end="")
             for tup in self.graph[i]:
                 print(tup[0],"(weight "+str(tup[1])+")",end=" ")
             print()
-            
 
-V = 9
+    def Dijikstra(self, source=0):
+        distArr = [float('inf') for i in range(self.V)]
+        distArr[source] = 0
+        Heap = minHeap()
+        for i in range(self.V):
+            if(i==source):
+                Heap.insert(0, i)
+            else:
+                Heap.insert(2**32, i)
+        done=set()
+        while(len(done)!=self.V):
+            u = Heap.HeapPop()
+            if(u[1] in done):
+                continue
+            done.add(u[1])
+            for node in self.graph[u[1]]:
+                if(node[0] in done):
+                    continue
+                dist = node[1]+distArr[u[1]]
+                if(dist<distArr[node[0]]):
+                    distArr[node[0]]=dist 
+                    Heap.decreaseKey(node[0], dist)
+        return distArr
+
+V = 5
 graph = Graph(V)
 graph.addEdge(0, 1, 1) 
 graph.addEdge(0, 4, 2)
@@ -100,10 +124,6 @@ graph.addEdge(1, 4, 2)
 graph.addEdge(2, 3, 1)
 graph.addEdge(3, 4, 3)  
 
-graph.addEdge(5, 6, 1)
-graph.addEdge(5, 8, 1)
-graph.addEdge(6, 7, 1) 
-   
 print("Graph: ")
 graph.printGraph() 
 print()
@@ -123,3 +143,6 @@ print()
 print("DFS Traversal for disconnected: ")
 graph.DisconnectedDFS()
 print()
+
+print("Shortest paths from 0:", end=" ")
+print(graph.Dijikstra(0))
