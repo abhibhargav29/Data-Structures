@@ -1,8 +1,12 @@
 #Graph_Implemented
 
-We have implemented a weighted undirected graph using adjacency list representation. We have add edge, remove edge, BFS and DFS methods in the 
+9.0)We have implemented a weighted undirected graph using adjacency list representation. We have add edge, remove edge, BFS, DFS and shortest path methods in the 
 class itself. We use list of list for adjacency list. The number of vertices can't be changed and are given in the starting.
 --We have two BFS functions and similarly two DFS functions.
 --One is for simple traversal from a given source and it prints all nodes directly or indirectly reachable from it.
 --Another one takes in just the grapgh and prints all nodes (all the disconneted components as well). It also tells the number of components in graph.
+--We have Dijikstra's algorithm implemented using min heap which is imported from another file named "9.1)ModifiedHeap".
 It assumes lowest numbered node as the source for a component and prints DFS/BFS accordingly.
+
+9.1)The modified min heap takes in two values for each value, one the vertex number and second the weight, the heap is made on the basis of value.
+The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex.
