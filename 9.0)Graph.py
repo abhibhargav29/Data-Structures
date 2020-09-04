@@ -1,5 +1,5 @@
 from queue import Queue
-from heap import minHeap
+from ModifiesHeap import minHeap
 
 class Graph():
     def __init__(self, vertices):
