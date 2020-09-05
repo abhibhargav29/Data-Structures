@@ -137,6 +137,9 @@ class Graph():
 #Driver code
 V = 5
 graph = Graph(V)
+
+
+#Insertions
 graph.addEdge(0, 1, 1) 
 graph.addEdge(0, 4, 2)
 graph.addEdge(1, 2, 3) 
@@ -145,10 +148,14 @@ graph.addEdge(1, 4, 2)
 graph.addEdge(2, 3, 1)
 graph.addEdge(3, 4, 3)  
 
+
+#Graph
 print("Graph: ")
 graph.printGraph() 
 print()
 
+
+#Traversals
 print("BFS Traversal from 0: ")
 graph.BFS(0)
 print()
@@ -165,5 +172,7 @@ print("DFS Traversal for disconnected: ")
 graph.DisconnectedDFS()
 print()
 
+
+#Shortest Path
 print("Shortest paths from 0:", end=" ")
 print(graph.Dijikstra(0))
