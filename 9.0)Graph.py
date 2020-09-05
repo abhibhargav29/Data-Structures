@@ -87,9 +87,29 @@ class Graph():
                 continue
             print("vertex",i,"has adjacents: ",end="")
             for tup in self.graph[i]:
-                print(tup[0],"(weight "+str(tup[1])+")",end=" ")
+                print(tup[0],"(weight "+str(tup[1])+")",end=" ")             
             print()
+            
+     #Cycle detection in graph, not called in driver code
+    def cycleDetect(self):
+        visited = [False for i in range(self.V)]
+        for i in range(self.V):
+            if(visited[i]==False):
+                if(self.cycleHelper(i, visited)==True):
+                    return True
+        return False
 
+    def cycleHelper(self, source, visited, parent=-1):
+        visited[source] = True
+        for adj in self.graph[source]:
+            if(visited[adj[0]]==False):
+                if(self.cycleHelper(adj[0], visited, source)):
+                    return True
+            elif(adj[0]!=parent):
+                return True
+        return False
+
+    #Shortest path using dijikstra algorihthm
     def Dijikstra(self, source=0):
         distArr = [float('inf') for i in range(self.V)]
         distArr[source] = 0
@@ -114,6 +134,7 @@ class Graph():
                     Heap.decreaseKey(node[0], dist)
         return distArr
 
+#Driver code
 V = 5
 graph = Graph(V)
 graph.addEdge(0, 1, 1) 
