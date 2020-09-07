@@ -27,6 +27,25 @@ class DirectedGraph():
                 print(tup[0],"(weight "+str(tup[1])+")",end=" ")
             print()
 
+    def cycleDetectBFS(self):
+        DegArr = self.indeg 
+        q = Queue()
+        for i in range(len(DegArr)):
+            if(DegArr[i]==0):
+                q.put(i)
+
+        while(q.empty()!=True):
+            curr = q.get()
+            for ele in self.graph[curr]:
+                if(DegArr[ele[0]]!=0):
+                    DegArr[ele[0]]-=1
+                    if(DegArr[ele[0]]==0):
+                        q.put(ele[0])
+        if(all(DegArr)):
+            return True
+        else:
+            return False
+
     def cycleDetectDFS(self):
         visited = [False for i in range(0,self.V)]
         RecStack = [False for i in range(0, self.V)]
@@ -67,8 +86,41 @@ class DirectedGraph():
                     DegArr[ele[0]]-=1
                     if(DegArr[ele[0]]==0):
                         q.put(ele[0])
-        print()
 
+    def DFSTopologicalSort(self):
+        visited = [False for i in range(self.V)]
+        stack = []
+
+        for i in range(self.V):
+            if(visited[i]==False):
+                self.DFSTopologicalSortUtil(i, visited, stack)
+
+        return stack
+
+    def DFSTopologicalSortUtil(self, source, visited, stack):
+        visited[source] = True
+
+        for ele in self.graph[source]:
+            if(visited[ele[0]]==False):
+                self.DFSTopologicalSortUtil(ele[0], visited, stack)
+
+        stack.insert(0,source)
+
+    def ShortestDistance(self, source):
+        if(self.cycleDetectBFS()):
+            return
+
+        Arr = self.DFSTopologicalSort()
+        distArr = [float('inf') for i in range(self.V)]
+        distArr[source] = 0
+
+        for i in Arr:
+            for ele in self.graph[i]:
+                if(distArr[ele[0]]>distArr[i]+ele[1]):
+                    distArr[ele[0]] = distArr[i]+ele[1]
+        return distArr
+
+#Driver Code
 g = DirectedGraph(5)
 
 g.addEdge(0, 1, 2)
@@ -77,11 +129,13 @@ g.addEdge(2, 3, 3)
 g.addEdge(2, 4, 1)
 g.addEdge(4, 0, 3)
 
+print("Graph: ")
 g.printGraph()
 print()
 
-print(g.cycleDetectDFS())
-print()
-
+print("Topological Sort: ", end="")
 g.BFSTopologicalSort()
 print()
+
+print("Distance from 2: ", end="")
+print(g.ShortestDistance(2))
