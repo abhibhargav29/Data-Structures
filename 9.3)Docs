@@ -9,6 +9,10 @@ methods in the class itself. We use list of list for adjacency list. The number 
 --We have Dijikstra's algorithm implemented using min heap which is imported from another file named "ModifiedHeap".
 It assumes lowest numbered node as the source for a component and prints DFS/BFS accordingly.
 
-9.1)The modified min heap takes in two values for each value, one the vertex number and second the weight, the heap is made on the basis of value.
+9.1)We have implemented a weighted directed graph using adjacency list representation. We have add edge, remove edge, Topological sort, cycle detection and shortest path 
+method in the class itself. We have implmented all the functions with dfs and bfs based both.
+--The shortest path algo is only for DAG.
+
+9.2)The modified min heap takes in two values for each value, one the vertex number and second the weight, the heap is made on the basis of value.
 The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex. The file here is saved as "9.2)ModifiedHeap.py" but thats just to
 maintain order and on system "9.2)" needs to be removed as it will cause syntax error.
