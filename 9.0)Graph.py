@@ -133,6 +133,24 @@ class Graph():
                     distArr[node[0]]=dist 
                     Heap.decreaseKey(node[0], dist)
         return distArr
+    
+    def BellmanFord(self, source):
+        distArr = [float('inf') for i in range(self.V)]
+        distArr[source] = 0
+
+        for j in range(self.V-1):
+            for i in range(self.V):
+                for ele in self.graph[i]:
+                    if(ele[1]+distArr[i] < distArr[ele[0]]):
+                        distArr[ele[0]] = ele[1]+distArr[i]
+        
+        for i in range(self.V):
+                for ele in self.graph[i]:
+                    if(ele[1]+distArr[i] < distArr[ele[0]]):
+                        print("Negative weight cycle detected, shortest weight not possible!")
+                        return
+
+        return distArr
 
 #Driver code
 V = 5
@@ -176,3 +194,8 @@ print()
 #Shortest Path
 print("Shortest paths from 0:", end=" ")
 print(graph.Dijikstra(0))
+print()
+
+print("Shortest paths from 0:", end=" ")
+print(graph.BellmanFord(0))
+print()
