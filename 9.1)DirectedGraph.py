@@ -1,6 +1,7 @@
 from queue import Queue
 
 class DirectedGraph():
+    #An extra indegree array is there for Kahn's algorithm
     def __init__(self, vertices):
         self.V = vertices
         self.graph = [[] for i in range(0, self.V)]
