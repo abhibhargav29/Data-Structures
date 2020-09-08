@@ -72,7 +72,7 @@ class DirectedGraph():
             print("The graph is cyclic, topological sort not possible.")
             return
         
-        DegArr = self.indeg 
+        DegArr = self.indeg     #To not change the indegree array
         q = Queue()
         for i in range(len(DegArr)):
             if(DegArr[i]==0):
