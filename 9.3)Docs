@@ -7,6 +7,7 @@ methods in the class itself. We use list of list for adjacency list. The number 
 --Another one takes in just the grapgh and prints all nodes (all the disconneted components as well). It also tells the number of components in graph.
 --Cycle detection is based on DFS and returns boolean value.
 --We have Dijikstra's algorithm implemented using min heap which is imported from another file named "ModifiedHeap".
+--We also have bellman ford algorithm for shortest path which works for negative weights and detects negative weight cycle as well.
 It assumes lowest numbered node as the source for a component and prints DFS/BFS accordingly.
 
 9.1)We have implemented a weighted directed graph using adjacency list representation. We have add edge, remove edge, Topological sort, cycle detection and shortest path 
