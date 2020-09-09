@@ -109,7 +109,8 @@ class Graph():
                 return True
         return False
 
-    #Shortest path using dijikstra algorihthm
+    #Shortest path using dijikstra algorihthm, it works for all types of graph except negative weights.
+    #It is faster than bellman ford algorithm.
     def Dijikstra(self, source=0):
         distArr = [float('inf') for i in range(self.V)]
         distArr[source] = 0
@@ -134,6 +135,7 @@ class Graph():
                     Heap.decreaseKey(node[0], dist)
         return distArr
     
+    #Shortest Path using bellman ford algo, it can work for negative weight edges as well
     def BellmanFord(self, source):
         distArr = [float('inf') for i in range(self.V)]
         distArr[source] = 0
