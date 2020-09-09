@@ -28,6 +28,7 @@ class DirectedGraph():
                 print(tup[0],"(weight "+str(tup[1])+")",end=" ")
             print()
 
+    #BFS Cycle detection using indegree array.
     def cycleDetectBFS(self):
         DegArr = self.indeg 
         q = Queue()
@@ -47,6 +48,7 @@ class DirectedGraph():
         else:
             return False
 
+    #DFS cycle detection by using recusrion stack for ancestors.
     def cycleDetectDFS(self):
         visited = [False for i in range(0,self.V)]
         RecStack = [False for i in range(0, self.V)]
@@ -68,6 +70,7 @@ class DirectedGraph():
         RecStack[source] = False
         return False
 
+    #Topological sorting using Kahn's BFS based algorithm.
     def BFSTopologicalSort(self):
         if(self.cycleDetectDFS()==True):
             print("The graph is cyclic, topological sort not possible.")
@@ -88,6 +91,7 @@ class DirectedGraph():
                     if(DegArr[ele[0]]==0):
                         q.put(ele[0])
 
+    #Topological Sorting using DFS based approach.
     def DFSTopologicalSort(self):
         visited = [False for i in range(self.V)]
         stack = []
@@ -107,6 +111,7 @@ class DirectedGraph():
 
         stack.insert(0,source)
 
+    #Special shortest path algorithm for Directed Acyclic graph.
     def ShortestDistance(self, source):
         if(self.cycleDetectBFS()):
             return
@@ -124,19 +129,23 @@ class DirectedGraph():
 #Driver Code
 g = DirectedGraph(5)
 
+#Insert edges
 g.addEdge(0, 1, 2)
 g.addEdge(2, 1, 1)
 g.addEdge(2, 3, 3)
 g.addEdge(2, 4, 1)
 g.addEdge(4, 0, 3)
 
+#Graph
 print("Graph: ")
 g.printGraph()
 print()
 
+#Topologicla sort, only come for not cyclic graph
 print("Topological Sort: ", end="")
 g.BFSTopologicalSort()
 print()
 
+#Shortest distance
 print("Distance from 2: ", end="")
 print(g.ShortestDistance(2))
