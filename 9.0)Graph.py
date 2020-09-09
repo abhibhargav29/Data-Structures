@@ -146,6 +146,8 @@ class Graph():
                     if(ele[1]+distArr[i] < distArr[ele[0]]):
                         distArr[ele[0]] = ele[1]+distArr[i]
         
+        #This part will detect if their is a negative weight cycle. Negative weight cycle arises when their is a cycle in directed graph
+        #such that the traversal over that cycle yeilds negative weight, in such a case shortest path can not be determined.
         for i in range(self.V):
                 for ele in self.graph[i]:
                     if(ele[1]+distArr[i] < distArr[ele[0]]):
