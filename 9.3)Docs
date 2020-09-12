@@ -16,6 +16,6 @@ method in the class itself. We have implmented all the functions with dfs and bf
 --For topological sort, absence of cycle is necessary, so we have an initial check for that.
 --The shortest path algo is only for DAG.
 
-9.2)The modified min heap takes in two values for each value, one the vertex number and second the weight, the heap is made on the basis of value.
+9.2)The modified min heap takes in two values for each entry, one the vertex number and second the distance, the heap is made on the basis of distance.
 The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex. The file here is saved as "9.2)ModifiedHeap.py" but thats just to
 maintain order and on system "9.2)" needs to be removed as it will cause syntax error.
