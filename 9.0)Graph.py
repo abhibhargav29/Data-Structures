@@ -135,7 +135,7 @@ class Graph():
                     Heap.decreaseKey(node[0], dist)
         return distArr
     
-    #Shortest Path using bellman ford algo, it can work for negative weight edges as well
+    #Shortest Path using bellman ford algo, it can work for negative weight edges as well.
     def BellmanFord(self, source):
         distArr = [float('inf') for i in range(self.V)]
         distArr[source] = 0
