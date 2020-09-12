@@ -45,8 +45,7 @@ class minHeap():
             else:
                 break
     
-    #Helper for build heap
-    #It takes in a position in array and fixes the heap formed from this node as root.
+    #It takes in a position in array and fixes the heap formed from this node as root assuming all below are in order.
     def minHeapify(self, pos):
         left = self.left(pos)
         right= self.right(pos)
