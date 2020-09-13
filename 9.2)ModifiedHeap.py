@@ -27,9 +27,9 @@ class minHeap():
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
     #Insert while maintaining heap property.
+    #Value will be the weight or distance.
     def insert(self, val, vertex):
         self.size+=1
-        #Add the value at end of the array
         self.heap.append([val, vertex])
         curr = self.size-1
         self.pos[vertex] = curr
