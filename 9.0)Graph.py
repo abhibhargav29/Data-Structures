@@ -155,6 +155,37 @@ class Graph():
                         return
 
         return distArr
+    
+    #Minimum spanning tree using prims algorithm.
+    def PrimsMST(self):
+        heap = minHeap()
+        key = []
+        parent = [-1 for i in range(self.V)]
+        visited = [False for i in range(self.V)]
+        visited[0] = True
+
+        for i in range(self.V):
+            if(i==0):
+                key.append(0)
+                heap.insert(0, 0)
+                continue
+            key.append(float('inf'))
+            heap.insert(key[i], i)
+        
+        while(heap.size>0):
+            v = heap.HeapPop()
+            visited[v[1]] = True
+            for ele in self.graph[v[1]]:
+                if(visited[ele[0]]==False and ele[1]<key[ele[0]]):
+                    key[ele[0]] = ele[1]
+                    parent[ele[0]] = v[1]
+                    heap.decreaseKey(ele[0],ele[1])
+        
+        for i in range(self.V):
+            if(parent[i]==-1):
+                continue
+            print(parent[i], "-", i)
+        print("MST WEIGHT: ", sum(key))
 
 #Driver code
 V = 5
@@ -202,4 +233,9 @@ print()
 
 print("Shortest paths from 0:", end=" ")
 print(graph.BellmanFord(0))
+print()
+
+#MST
+print("MST Edges:")
+graph.PrimsMST()
 print()
