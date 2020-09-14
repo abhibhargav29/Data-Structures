@@ -1,7 +1,7 @@
 from queue import Queue
 
 class DirectedGraph():
-    #indegree array is there to use for Kahn's algorithm
+    #indegree array is there to use for Kahns algorithm
     def __init__(self, vertices):
         self.V = vertices
         self.graph = [[] for i in range(0, self.V)]
