@@ -18,5 +18,5 @@ method in the class itself. We have implmented all the functions with dfs and bf
 --The shortest path algo is only for DAG.
 
 9.2)The modified min heap takes in two values for each entry, one the distance and second the vertex number, the heap is made on the basis of distance.
-The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex. The file here is saved as "9.2)ModifiedHeap.py" but thats just to
-maintain order and on system "9.2)" needs to be removed as it will cause syntax error.
+The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex to later retireve in O(1) tinme. The file here is saved as 
+"9.2)ModifiedHeap.py" but thats just to maintain order and on system "9.2)" needs to be removed as it will cause syntax error.
