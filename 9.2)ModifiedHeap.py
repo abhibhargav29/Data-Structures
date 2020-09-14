@@ -71,9 +71,8 @@ class minHeap():
             self.minHeapify(right)
         else:
             return
-    
-    #Method not called in driver code. 
-    #It pops the topmost node or the min element.
+     
+    #Pops the topmost node or the min element.
     def HeapPop(self):
         item = self.heap[0]
         self.swap(0,self.size-1)
