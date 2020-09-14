@@ -184,6 +184,7 @@ class Graph():
         for i in range(self.V):
             if(parent[i]==-1):
                 continue
+            #Each edge
             print(parent[i], "-", i)
         print("MST WEIGHT: ", sum(key))
 
