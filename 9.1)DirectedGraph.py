@@ -126,6 +126,36 @@ class DirectedGraph():
                     distArr[ele[0]] = distArr[i]+ele[1]
         return distArr
 
+    #Reverse all edges of a graph and store it to a new graph
+    #Used in kosaraju algo and not called in code
+    def reverseGraph(self):
+        new = DirectedGraph(self.V)
+
+        for vertex in range(self.V):
+            for adj in self.graph[vertex]:
+                new.addEdge(adj[0], vertex, adj[1])
+
+        return new
+
+    #DFS search from a source used in kosaraju's algorithm
+    def DFS(self, source, visited):
+        visited[source] = True
+        print(source, end=" ")
+
+        for adj in self.graph[source]:
+            if(visited[adj[0]]==False):
+                self.DFS(adj[0], visited)
+
+    #Kosaraju algorithm for strongly connected components
+    def StronglyConnected(self):
+        arr = self.DFSTopologicalSort()
+        reverse = self.reverseGraph()
+        visited = [False for i in range(self.V)]
+        for ele in arr:
+            if(visited[ele]==False):
+                reverse.DFS(ele, visited)
+                print()
+
 #Driver Code
 g = DirectedGraph(5)
 
@@ -149,3 +179,7 @@ print()
 #Shortest distance
 print("Distance from 2: ", end="")
 print(g.ShortestDistance(2))
+
+#Strongly connected components
+print("Strong components: ")
+g.StronglyConnected()
