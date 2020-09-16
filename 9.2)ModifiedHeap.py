@@ -74,7 +74,7 @@ class minHeap():
      
     #Pops the topmost node or the min element.
     def HeapPop(self):
-        if(heap.size==0):
+        if(self.size==0):
             print("Empty heap")
             return None
         item = self.heap[0]
