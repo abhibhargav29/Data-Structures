@@ -98,6 +98,9 @@ class minHeap():
     #Method not called in driver code. 
     #It pops the topmost node or the min element.
     def HeapPop(self):
+        if(heap.size==0):
+            print("Empty heap")
+            return None
         item = self.heap[0]
         self.swap(0,self.size-1)
         del self.heap[self.size-1]
