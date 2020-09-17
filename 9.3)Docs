@@ -17,6 +17,7 @@ reverse graph and Kosaeraju's algorithm methods in the class itself.
 --For topological sort, absence of cycle is necessary, so we have an initial check for that. Topological sort is also implemented in bfs and dfs both.
 --The shortest path algo is only for DAG.
 --Reverse graph reverses each edge of the graph and stores it in a new graph which it returns
+--dfs traversal is used for kosaraju ago.
 --We use kosaraju algo for strongly connected components. Strong components are defined for a directed graph as grp of nodes that are all reachable from each other. This method
   prints these components seperated by line.
 
