@@ -155,7 +155,57 @@ class AVL_Tree(object):
             return root 
   
         return self.getMinValueNode(root.left) 
-  
+
+    #Simple search
+    def search(self, value):
+        if(self.val == None):
+            print(value,"Not Found")
+            return
+        curr=self
+        while(curr!=None):
+            if(curr.val == value):
+                print(value,"Found")
+                return
+            elif(curr.val > value):
+                curr=curr.left
+            else:
+                curr=curr.right
+        print(value,"Not Found")
+    
+    #Extension of search to find greater closest number.
+    def ceil(self, value):
+        if(self.val==None):
+            return None
+        ans=float('inf')
+        curr=self
+        while(curr!=None):
+            if(curr.val>value):
+                ans = min(curr.val, ans)
+                curr=curr.left
+            elif(curr.val<value):
+                curr=curr.right
+            else:
+                return -1
+        if(ans==float('inf')):
+            return -1
+        return ans    
+
+    #Extension of search to find smaller closest number
+    def floor(self, value):
+        if(self.val==None):
+            return None
+        ans=-1
+        curr=self
+        while(curr!=None):
+            if(curr.val<value):
+                ans = max(curr.val, ans)
+                curr=curr.right
+            elif(curr.val>value):
+                curr=curr.left
+            else:
+                return -1
+        return ans
+    
     def preOrder(self, root): 
   
         if not root: 
@@ -163,7 +213,7 @@ class AVL_Tree(object):
   
         print("{0} ".format(root.val), end="") 
         self.preOrder(root.left) 
-        self.preOrder(root.right)
+        self.preOrder(root.right)  
 
 #Drivr Code
 myTree = AVL_Tree() 
