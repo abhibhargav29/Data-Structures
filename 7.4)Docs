@@ -20,3 +20,5 @@ A balancd BST will have all of them as O(logn).
 
 7.2)Here we have implemented the balanced Binary search tree AVL. It is one of very strict tree and it has complex insertion and deletions
 to maintain this strict balancing.
+
+7.3)Trie
