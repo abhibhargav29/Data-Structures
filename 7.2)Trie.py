@@ -42,7 +42,7 @@ class Trie():
             if(i!=0):
                 return curr
         
-
+    #helper for delete
     def isLeaf(self, node):
         for i in node.arr:
             if(i!=None):
@@ -60,6 +60,28 @@ class Trie():
         if(curr.isEnd==True):
             return True
         return False
+    
+    def prefixSearch(self, item):
+        n = len(item)
+        curr = self.head
+        for i in range(0,n):
+            if(curr.arr[ord(item[i])-ord("a")]==None):
+                return False
+            else:
+                curr = curr.arr[ord(item[i])-ord("a")]
+        cnt=0
+        cnt += self.recSearch(curr)
+        return cnt
+
+    #helper for prefix search
+    def recSearch(self, node):
+        cnt = 0
+        if(node.isEnd==True):
+            cnt+=1
+        for let in node.arr:
+            if(let!=None):
+                cnt+=self.recSearch(let)
+        return cnt
 
     def printTrie(self, strings=[], curr = None):
         if(curr==None):
@@ -103,3 +125,10 @@ if(t.search(word)):
     print(word,"is present")
 else:
     print(word,"not present")
+
+#Prefix search
+prefix = "ans"
+if(t.prefixSearch(prefix)==False):
+    print("No word with prefix", prefix)
+else:
+    print("Number of words with prefix", prefix, ":", t.prefixSearch(prefix))
