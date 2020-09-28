@@ -77,21 +77,27 @@ class Trie():
                 del strings[-1]
                 i+=1
 
+                
 #driver code
-strArr = ["bat", "cat", "but", "ans", "answer", "cut"]
 t = Trie()
+
+#Insert
+strArr = ["bat", "cat", "but", "ans", "answer", "cut"]
 for string in strArr:
     t.insert(string)
 
+#Print
 print("Lexicographically printing trie: ", end="")
 t.printTrie()
 print()
 
+#Delete
 t.delete("cat")
 print("After deletion of cat:", end=" ")
 t.printTrie()
 print()
 
+#Search
 word = "cu"
 if(t.search(word)):
     print(word,"is present")
