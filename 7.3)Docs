@@ -11,14 +11,11 @@ same vertical level as it, same vertical level is determined by the horizotal di
 We have entered values manually.
 We have also implemented a function to make a tree given preorder and inorder traversals of a tree.
 
-7.1)We have implemented the binary search tree using a BST class. It has methods for search, insert, delete and level order traversal.
+7.1)Here we have implemented the balanced Binary search tree AVL. It is a strictly balanced tree and it has complex insertion and deletions
+to maintain this strict balancing. It has methods for search, insert, delete and pre-order traversal along with some helper methods.
 It also has floor and ceil methods that are basically extensions of search method.
 Floor finds the value inside tree that is smaller than given value and closest to it, it gives -1 for not present.
 Ceil finds the value inside tree that is greater than given value and closest to it, it gives -1 for not present.
-The complexity of all these operatns in O(h) except traversal.
-A balancd BST will have all of them as O(logn).
+The complexity of all these operatns in O(logn) except traversal.
 
-7.2)Here we have implemented the balanced Binary search tree AVL. It is one of very strict tree and it has complex insertion and deletions
-to maintain this strict balancing.
-
-7.3)Trie
+7.2)Trie
