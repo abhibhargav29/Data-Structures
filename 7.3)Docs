@@ -1,6 +1,6 @@
 #TREE IMPLEMENTED
 
-7.0) We have implemented a simple binary tree and Inorder, Preorder, Postorder, Level order traversals, Top view, size and kth level methods.
+7.0)We have implemented a simple binary tree and Inorder, Preorder, Postorder, Level order traversals, Top view, size and kth level methods.
 We also have spiral traversal method and a height method that gives diameter as well.
 --Size of a tree is number of nodes. We have a special method for complete tree size with optimization.
 --Spiral Traversal is simply level order traversal with each alternate level printed in reverse.
@@ -18,4 +18,7 @@ Floor finds the value inside tree that is smaller than given value and closest t
 Ceil finds the value inside tree that is greater than given value and closest to it, it gives -1 for not present.
 The complexity of all these operatns in O(logn) except traversal.
 
-7.2)Trie
+7.2)We have implemented trie data structure which which is based on tree concept and is sed to store a set or dictionary of words. It allows
+faster search and prefix search. We have insert, delete, prefix search, search and lexicographic print methods for the trie class. In trie,
+each node has an array of children whose length is equal to number of characters(26 lowercase alphabets in our case) and it holds address of next 
+node to go to if the strings have that letter. Each node also has an isEnd variable to tell if its the ending node of a word
