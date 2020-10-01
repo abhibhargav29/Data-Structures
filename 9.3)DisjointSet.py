@@ -3,10 +3,12 @@ class DisjointSet():
         self.cnt = elements
         self.parent = [i for i in range(0,elements)]
         self.rank = [0 for i in range(0,elements)]
+        #Union by rank
     
     def find(self, ele):
         if(self.parent[ele]==ele):
             return ele
+        #Path compression
         self.parent[ele] = self.find(self.parent[ele])
         return self.parent[ele]
     
