@@ -71,7 +71,7 @@ print("INDEX:"+\
         "\n\"e\" -> Exit")
 print("\n")
 
-#The menu
+#The menu loop
 while(True):
     x = input("Enter Your choice: ")
     if(x=="e"):
