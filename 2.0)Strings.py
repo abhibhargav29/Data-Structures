@@ -38,6 +38,38 @@ def isValid(s):
     else:
         return "NO"
 
+#helper for longest palindrome
+def aroundCenter(s, L, R):
+    right= R
+    left = L
+    while((left>=0 and right<len(s))):
+        if(s[right]==s[left]):
+            right+=1
+            left-=1
+        else:
+            break
+    return right-left-1
+
+#Returns longest substring that is palindrome
+#Not called in driver code
+def longestPalindrome(s):
+    if(s == None or len(s)==0):
+        return ""
+    n = len(s)
+    finalStart=0
+    finalEnd=0
+    for i in range(n):
+        len1 = aroundCenter(s,i,i)
+        len2 = aroundCenter(s,i,i+1)
+        length = max(len1,len2)
+        if(length>finalEnd-finalStart):
+            finalStart = i-(length-1)//2
+            finalEnd = i+(length//2)
+    return s[finalStart:finalEnd+1]
+
+s = input()
+print(longestPalindrome(s))    
+    
 #This function counts number of special sub strings in a string
 #Special substrings are either strings with same character like "a", "aaaa", "bbbb" etc or only the middle element is different in case of odd length strings.
 #Ex- For aabaab the list of special Substrings will be {"a", "a", "b", "a", "a", "b", "aa", "aa", "aabaa", "aba"}
