@@ -8,4 +8,4 @@ stored as an array. We have implmented insert, heapify, display heap, build heap
 --Delete top replaces the top and last elment and then deletes the last element and then calls heapify.
 --Decrease key decreases the value of a given index node and then places it accordingly in heap.
 The output of this program should print two heaps that shoud be identical, as they are made from same data but one from array,
-other from indertions manually.
+other from manual insertions.
