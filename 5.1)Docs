@@ -4,7 +4,7 @@ We have implemented stack using array and made push, pop and delete options.
 Although python list is in itself a good implementation of stack but we made seperate class and methods.
 We have also used that data structure to solve balance paranthesis problem and stock span probelem.
 We have also implemented an equal stacks function. 
-We have implemented a stack game function which is a good dp problem.
+We have implemented a stack game function which is a dp problem.
 
 1) The stack is dynamically sized and thus there is no problem of overflow.
 The pop method takes an optional parameter "ret", which if set to True will return the removed element as well otherwise not.
