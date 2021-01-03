@@ -18,8 +18,8 @@ reverse graph and Kosaeraju's algorithm methods in the class itself.
 --The shortest path algo is only for DAG.
 --Reverse graph reverses each edge of the graph and stores it in a new graph which it returns
 --dfs traversal is used for kosaraju ago.
---We use kosaraju algo for strongly connected components. Strong components are defined for a directed graph as grp of nodes that are all reachable from each other. This method
-  prints these components seperated by line.
+--We use kosaraju algo for strongly connected components. Strong components are defined for a directed graph as grp of nodes that are all reachable from each other. 
+  This method prints these components seperated by line.
 
 9.2)The modified min heap takes in two values for each entry, one the distance and second the vertex number, the heap is made on the basis of distance.
 The vertex is used to recognize it using a hashtable "pos" that stores position of each vertex to later retireve in O(1) tinme. The file here is saved as 
